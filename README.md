@@ -15,3 +15,4 @@ Ce projet est un clone de quelques pages sélectionnées de l'interface utilisat
 
 ![Screenshot_2024-05-11-11-06-10-98_81a34c639242a5072799d33571e466ee](https://github.com/divaarica/appTer/assets/151394040/d6a3dc3b-f9ba-459d-a6f8-ddf06bdd0828)
 
+Voici une démonstration de l'application : [lien vers la vidéo de démo] https://drive.google.com/file/d/1OV8y3Om7htW_6_7Jnkv-Yh6-dl7uoNOd/view?usp=sharing
