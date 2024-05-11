@@ -1,6 +1,7 @@
-// import 'package:wave_project/screens/rechercher_screen.dart';
-// import 'package:wave_project/screens/recu_screen.dart';
+import 'package:wave_project/screens/rechercher_screen.dart';
+import 'package:wave_project/screens/recu_screen.dart';
 import 'package:wave_project/screens/setting_screen.dart';
+import 'package:wave_project/screens/transfert_screen.dart';
 import 'package:wave_project/utils/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -144,18 +145,29 @@ class _HomeScreenState extends State<HomeScreen> {
                         GridView.builder(
                           //grille de la barre des icones
                           gridDelegate:
-                              const SliverGridDelegateWithFixedCrossAxisCount(
-                                  crossAxisCount: 4),
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 4),
                           //faire recherche
                           shrinkWrap: true,
                           physics: ClampingScrollPhysics(),
                           //pour pouvoir scroller meme sur les elements
                           itemCount: optionList.length,
                           itemBuilder: (context, index) {
-                            return optionWidget(
-                              icon: optionList[index].icon,
-                              color: optionList[index].color,
-                              text: optionList[index].text,
+                            return GestureDetector(
+                              onTap: (){
+                                if(optionList[index].text == "Transfert"){
+                                  Navigator.push(context, MaterialPageRoute(
+                                      builder: (context){
+                                        return TransfertScreen();
+                                      }));
+                                }
+                              },
+                              child: optionWidget(
+                                icon: optionList[index].icon,
+                                color: optionList[index].color,
+                                text: optionList[index].text,
+                              ),
+
                             );
                           },
                         ),
@@ -213,11 +225,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                     ],
                                   ),
                                   onTap: (){
-                                    // Navigator.push(context, MaterialPageRoute(
-                                    //   builder: (context) {
-                                    //     return RecuScreen(transaction: transaction);
-                                    //   },
-                                    // ));
+                                    Navigator.push(context, MaterialPageRoute(
+                                      builder: (context) {
+                                        return RecuScreen(transaction: transaction);
+                                      },
+                                    ));
                                   },
                                 ),
                               );
@@ -234,11 +246,11 @@ class _HomeScreenState extends State<HomeScreen> {
 
                         TextButton(
                           onPressed: () {
-                            // Navigator.push(context, MaterialPageRoute(
-                            //   builder: (context) {
-                            //     return ResearchScreen();
-                            //   },
-                            // ));
+                            Navigator.push(context, MaterialPageRoute(
+                              builder: (context) {
+                                return ResearchScreen();
+                              },
+                            ));
                           },
                           style: ButtonStyle(
                               backgroundColor: MaterialStateProperty.all<Color>(primaryColor.withOpacity(0.1)),
